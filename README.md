@@ -2,4 +2,6 @@
 ## Features
 - **Spicetify Installation:** Quickly install Spicetify
 - **Spicetify Upgrade** Quickly Update Spicetify      
-- i will update this
+# How to use 
+> if you dont have spicetify Pick "No"
+> if you have spicetify and it wont work pick "Yes"
