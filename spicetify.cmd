@@ -13,10 +13,6 @@ if "%userInput%"== "Yes" (
     timeout /t 5 /nobreak
     powershell -command "iwr -useb https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.ps1 | iex"
     powershell -command "iwr -useb https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.ps1 | iex"
-    powershell -command spicetify upgrade
-    powershell -command spicetify backup
-    powershell -command spicetify backup apply
-    powershell -command spicetify restore backup apply
     echo Done installing! 
    echo Completed Self Cleaning Now!
    timeout /t 6 /nobreak
