@@ -1,8 +1,10 @@
 @echo off
-set /p userInput= Do you have spicetify? (yes / no (CASE SENSITIVE) ):
-if "%userInput%"== "yes" (
+echo For install spicetify INPUT(1)
+echo For Fix spicetify INPUT(2)
+set /p userInput= INPUT: 
+if "%userInput%"== "1" (
      echo Self fix Mode
-) else if "%userInput%"== "no" (
+) else if "%userInput%"== "2" (
     color 01
     echo Installing spicetify!
     echo ██████  ██    ██      ██████  ██████  ██      ██ ███████ ██       ██████  ██     ██ ███████ ██████  
