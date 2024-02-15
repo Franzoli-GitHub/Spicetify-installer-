@@ -1,8 +1,8 @@
 @echo off
-set /p userInput= Do you have spicetify? (Yes/No):
-if "%userInput%"== "Yes" (
+set /p userInput= Do you have spicetify? (yes / no (CASE SENSITIVE) ):
+if "%userInput%"== "yes" (
      echo Self fix Mode
-) else if "%userInput%"== "No" (
+) else if "%userInput%"== "no" (
     color 01
     echo Installing spicetify!
     echo ██████  ██    ██      ██████  ██████  ██      ██ ███████ ██       ██████  ██     ██ ███████ ██████  
@@ -10,29 +10,29 @@ if "%userInput%"== "Yes" (
     echo ██████    ████       ██      ██    ██ ██      ██ █████   ██      ██    ██ ██  █  ██ █████   ██████  
     echo ██   ██    ██        ██      ██    ██ ██      ██ ██      ██      ██    ██ ██ ███ ██ ██      ██   ██ 
     echo ██████     ██         ██████  ██████  ███████ ██ ██      ███████  ██████   ███ ███  ███████ ██   ██
-    timeout /t 5 /nobreak
+    timeout /t 2 /nobreak
     powershell -command "iwr -useb https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.ps1 | iex"
     powershell -command "iwr -useb https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.ps1 | iex"
     echo Done installing! 
    echo Completed Self Cleaning Now!
-   timeout /t 6 /nobreak
+   timeout /t 2 /nobreak
    Taskkill /F /IM Spotify.exe
-   Taskkill /F /IM spotify.exe
    Taskkill /F /IM cmd.exe
 ) else (
  echo invalid command
- timeout /t 5 /nobreak
+ timeout /t 1 /nobreak
+ pause
  exit
 )
 pause
-color 2
+color 01
 echo ██████  ██    ██      ██████  ██████  ██      ██ ███████ ██       ██████  ██     ██ ███████ ██████  
 echo ██   ██  ██  ██      ██      ██    ██ ██      ██ ██      ██      ██    ██ ██     ██ ██      ██   ██ 
 echo ██████    ████       ██      ██    ██ ██      ██ █████   ██      ██    ██ ██  █  ██ █████   ██████  
 echo ██   ██    ██        ██      ██    ██ ██      ██ ██      ██      ██    ██ ██ ███ ██ ██      ██   ██ 
 echo ██████     ██         ██████  ██████  ███████ ██ ██      ███████  ██████   ███ ███  ███████ ██   ██
-echo This will update and use a backup of spicetify 
-timeout /t 5 /nobreak                                                                                                                                                                                                                                                                                                                                                                                                             
+echo This will will fix spicetify
+timeout /t 2 /nobreak                                                                                                                                                                                                                                                                                                                                                                                                             
 powershell -command spicetify upgrade
 powershell -command spicetify backup
 powershell -command spicetify backup apply
@@ -40,7 +40,6 @@ powershell -command spicetify restore backup apply
 Taskkill /F /IM Spotify.exe
 Taskkill /F /IM spotify.exe
 cls
-echo Completed Self Cleaning Now!
-timeout /t 5 /nobreak
+timeout /t 2 /nobreak
 Taskkill /F /IM cmd.exe
 
