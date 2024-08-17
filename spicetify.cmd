@@ -14,7 +14,7 @@ if "%userInput%"== "Yes" (
     timeout /t 5 /nobreak
     Echo Y | powershell -command "iwr -useb https://raw.githubusercontent.com/spicetify/cli/main/install.ps1 | iex"
     powershell -command "iwr -useb https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.ps1 | iex"
-    Start C:\Users\Franzoli\AppData\Roaming\Spotify\Spotify.exe
+    Start // task try to start spotify without exposing. Developer directory 
     echo Done installing! 
    echo Completed Self Cleaning Now!
    timeout /t 6 /nobreak
