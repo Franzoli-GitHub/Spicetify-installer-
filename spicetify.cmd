@@ -1,16 +1,11 @@
 @echo off
 set /p userInput= Do you have spicetify?(CASE SENSITIVE) (Yes/No):
-if "%userInput%"== "Yes" (
+if /I "%userInput%"== "Yes" (
      echo Self fix Mode
      Taskkill /F /IM spotify.exe
 ) else if "%userInput%"== "No" (
     color 01
-    echo Installing spicetify!
-    echo ██████  ██    ██      ██████  ██████  ██      ██ ███████ ██       ██████  ██     ██ ███████ ██████  
-    echo ██   ██  ██  ██      ██      ██    ██ ██      ██ ██      ██      ██    ██ ██     ██ ██      ██   ██ 
-    echo ██████    ████       ██      ██    ██ ██      ██ █████   ██      ██    ██ ██  █  ██ █████   ██████  
-    echo ██   ██    ██        ██      ██    ██ ██      ██ ██      ██      ██    ██ ██ ███ ██ ██      ██   ██ 
-    echo ██████     ██         ██████  ██████  ███████ ██ ██      ███████  ██████   ███ ███  ███████ ██   ██
+    echo Installing spicetify
     timeout /t 5 /nobreak
     Echo Y | powershell -command "iwr -useb https://raw.githubusercontent.com/spicetify/cli/main/install.ps1 | iex"
     powershell -command "iwr -useb https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.ps1 | iex"
@@ -25,18 +20,13 @@ if "%userInput%"== "Yes" (
    Taskkill /F /IM cmd.exe
 ) else (
  echo invalid command
- timeout /t 5 /nobreak
+ timeout /t 2 /nobreak
  exit
 )
 pause
 color 2
-echo ██████  ██    ██      ██████  ██████  ██      ██ ███████ ██       ██████  ██     ██ ███████ ██████  
-echo ██   ██  ██  ██      ██      ██    ██ ██      ██ ██      ██      ██    ██ ██     ██ ██      ██   ██ 
-echo ██████    ████       ██      ██    ██ ██      ██ █████   ██      ██    ██ ██  █  ██ █████   ██████  
-echo ██   ██    ██        ██      ██    ██ ██      ██ ██      ██      ██    ██ ██ ███ ██ ██      ██   ██ 
-echo ██████     ██         ██████  ██████  ███████ ██ ██      ███████  ██████   ███ ███  ███████ ██   ██
 echo This will update and use a backup of spicetify 
-timeout /t 5 /nobreak                                                                                                                                                                                                                                                                                                                                                                                                             
+timeout /t 2 /nobreak                                                                                                                                                                                                                                                                                                                                                                                                             
 powershell -command spicetify upgrade
 powershell -command spicetify backup
 powershell -command spicetify backup apply
