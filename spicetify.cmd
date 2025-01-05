@@ -23,7 +23,6 @@ if /I "%userInput%"== "Yes" (
  timeout /t 2 /nobreak
  exit
 )
-pause
 color 2
 echo This will update and use a backup of spicetify 
 timeout /t 2 /nobreak                                                                                                                                                                                                                                                                                                                                                                                                             
@@ -36,4 +35,6 @@ Taskkill /F /IM spotify.exe
 cls
 echo Completed Self Cleaning Now!
 timeout /t 5 /nobreak
+Start C:\Users\%USERNAME%\AppData\Roaming\Spotify\Spotify.exe
 Taskkill /F /IM cmd.exe
+
